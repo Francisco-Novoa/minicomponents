@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Button from './botton'
 import Dropdown from './dropdown'
-import ControledInput from './controledinput'
+import ControledInputText from './controledinput'
 
 
 
@@ -31,22 +31,22 @@ export default function Navbar() {
             <div
                 className="collapse navbar-collapse "
                 id="navbarSupportedContent">
-                <ul className="navbar-nav mr-auto d-flex justify-content-center ">
-                    <li className="nav-item active">
+                <ul className="navbar-nav mr-auto d-flex justify-content-center">
+                    <li className="nav-item pt-2">
                         <Button
                             text="boton1"
                             classes=""
                             handleClick={handleClick}
                         />
                     </li>
-                    <li className="nav-item">
+                    <li className="nav-item pt-2">
                         <Button
                             text="boton2"
                             classes=""
                             handleClick={handleClick}
                         />
                     </li>
-                    <li className="nav-item">
+                    <li className="nav-item pt-2">
                         <Button
                             text="boton3"
                             classes=""
@@ -55,6 +55,7 @@ export default function Navbar() {
                     </li>
                     <Dropdown
                         id={"dropdown1"}
+                        name="haz click aca"
                         functions={
                             [
                                 {
@@ -74,14 +75,22 @@ export default function Navbar() {
                             ]
                         }
                     />
-
                 </ul>
-                <ControledInput
-                    value={local}
-                    handleChange={setLocal}
-                    placeholder="" />
+                <div className="row" >
+                    <div className="col-8">
+                        <ControledInputText
+                            value={local}
+                            handleChange={setLocal}
+                            placeholder=""/>
+                    </div>
+                    <div className="col-4">
+                        <Button
+                            text="Search"
+                            classes="font-weight-bold border"
+                            handleClick={handleClick} />
+                    </div>
+                </div>
             </div>
-
         </nav>
     )
 }
