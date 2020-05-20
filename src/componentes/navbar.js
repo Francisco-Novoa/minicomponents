@@ -35,7 +35,7 @@ export default function Navbar() {
                     <li className="nav-item active">
                         <Button
                             text="boton1"
-                            classes="btn-primary"
+                            classes=""
                             handleClick={handleClick}
                         />
                     </li>
